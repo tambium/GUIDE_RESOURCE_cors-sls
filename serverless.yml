@@ -1,0 +1,22 @@
+service: cors
+
+provider:
+  name: aws
+  apiName: cors-api
+  region: eu-west-1
+  stage: dev
+  memorySize: 256
+  runtime: nodejs12.x
+  role: LambdaRole
+
+resources:
+  Resources:
+    LambdaRole: ${file(./resource/LambdaRole.yml)}
+
+functions:
+  cors_test_lambda:
+    handler: src/index.handler
+    events:
+      - http:
+          path: /cors
+          method: get
