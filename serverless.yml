@@ -20,3 +20,8 @@ functions:
       - http:
           path: /cors
           method: get
+          cors: true
+      - http:
+          path: /cors
+          method: post
+          cors: true
