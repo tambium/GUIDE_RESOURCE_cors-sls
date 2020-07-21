@@ -24,4 +24,8 @@ functions:
       - http:
           path: /cors
           method: post
-          cors: true
+          cors:
+            allowCredentials: true
+            headers:
+              - Content-Type
+            origin: "*"
